@@ -1,0 +1,244 @@
+/* Estilos generales */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e9ecef;
+}
+
+/* Header */
+
+.header {
+    background-color: #dcc4c0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img {
+    width: 150px;
+}
+
+.header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.header nav ul li {
+    margin-right: 15px;
+}
+
+.header nav ul li:last-child {
+    margin-right: 0;
+}
+
+.header nav ul li a {
+    color: #644746;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    padding: 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.header nav ul li a:hover{
+    color: #644746;
+    border-bottom: 2px solid #644746;
+}
+
+/* Main index */
+
+.title-container {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.title-container h1 {
+    color: #644746;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    padding-top: 15px;
+    margin-bottom: 30px;
+}
+
+.title-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #644746;
+}
+
+.c-item{
+    height: 480px;
+}
+
+.c-img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-container {
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.content-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content-container p{
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 8px;
+    color: #1b110f;
+}
+
+/* Main about */
+
+/* Main history */
+
+/* Main art */
+
+.gallery-container{
+    display: flex;
+}
+
+.gallery-cards{
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    background-color: rgb(245, 215, 176);
+}
+
+/* Main contact */
+
+/* Footer */
+
+.footer{
+    background-color: #dcc4c0;
+    padding: 70px 0;
+    margin-top: auto;
+    position: relative;
+}
+
+.footer-info img {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -70px;
+}
+
+.footer-info{
+    width: calc(33.33% - 10px);
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+.footer-info ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer-info h4{
+    color: #644746;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-info h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #644746;
+    height: 2px;
+    box-sizing: border-box;
+    width: 60px;
+}
+
+.footer-info ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer-info ul li{
+    color: #644746;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-info ul li a{
+    color: #644746;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-info ul li a:hover{
+    color: #644746;
+    padding-left: 10px;
+}
+
+.footer-info ul li:hover{
+    color: #644746;
+    padding-left: 10px;
+}
+
+.copy-info {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+}
+
+.copy-info h4 {
+    color: #644746;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-top: 1px solid #644746;
+    padding-top: 10px;
+}
+
+/* Responsive */
+
