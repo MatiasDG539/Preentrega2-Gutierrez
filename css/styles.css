@@ -31,22 +31,22 @@ body{
 .left-img,
 .right-img {
   position: absolute;
-  top: 11%; /* Centrar verticalmente */
-  transform: translateY(-50%); /* Ajustar para centrar verticalmente */
+  top: 11%;
+  transform: translateY(-50%);
 }
 
 .left-img img,
 .right-img img {
-  height: 200px; /* Ajustar la altura según sea necesario */
+  height: 200px;
   width: 350px;
 }
 
 .left-img {
-  left: 0px; /* Ajustar según sea necesario */
+  left: 0px;
 }
 
 .right-img {
-  right: 0px; /* Ajustar según sea necesario */
+  right: 0px;
 }
 
 .header nav{
@@ -150,6 +150,7 @@ body{
     width: 100%;
     height: 60vh;
     overflow: hidden;
+    margin-top: 30px;
   }
   
   .img-container img {
@@ -173,6 +174,102 @@ body{
   }
 
 /* Main about */
+
+.banner-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.dash {
+    position: absolute;
+    top: 60%;
+    width: 100px;
+    height: 3px;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.left {
+    left: 30%;
+}
+
+.right {
+    right: 30%;
+}
+
+.banner {
+    position: relative;
+    background-image: url('./../assets/img/about-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    padding: 200px 0;
+    text-align: center;
+    max-width: 1200px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.banner h1 {
+    font-size: 50px;
+}
+
+.banner p {
+    font-size: 30px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.img-card {
+    width: 48%;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.img-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: "Quicksand", sans-serif;
+    font-size: 17px;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
 
 /* Main history */
 
@@ -297,7 +394,7 @@ body{
     color: #644746;
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     border-top: 1px solid #644746;
     padding-top: 10px;
 }
