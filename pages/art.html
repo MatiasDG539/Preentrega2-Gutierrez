@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href=".././assets/img/logo.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Proyectos</title>
     <link rel="stylesheet" href="./../css/styles.css">
 </head>
@@ -42,27 +44,17 @@
 
     <main id="art">
 
-        <div class="gallery-container">
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
+        <div class="banner-container">
+            <div class="dash left"></div>
+            <div class="art-banner">
+                <div class="container">
+                    <h1 class="display-4">Sengoku era wiki</h1>
+                    <p class="lead">Arte</p>
+                </div>
+            </div>
+            <div class="dash right"></div>
         </div>
-
-        <div class="gallery-container">
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-        </div>
-
-        <div class="gallery-container">
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-            <div class="gallery-cards"></div>
-        </div>
-
+        
     </main>
 
     <footer class="footer">
@@ -73,7 +65,7 @@
                     <a href="./../index.html"><img src="./../assets/img/logo-mod.png" alt="Sengoku Kanji"></a>
                 </div>
                 <div class="footer-info">
-                    <h4>Links utiles</h4>
+                    <h4>Links útiles</h4>
                     <ul>
                         <li><a href="./about.html">Nosotros</a></li>
                         <li><a href="./history.html">Historia</a></li>
@@ -83,7 +75,7 @@
                 </div>
         
                 <div class="footer-info">
-                    <h4>Informacion de contacto</h4>
+                    <h4>Información de contacto</h4>
                     <ul>
                         <li>Matias Daniel Gutierrez</li>
                         <li>+54 9 3816915545</li>
@@ -97,5 +89,16 @@
             <h4>Sengoku Era Wiki - Design by Matias Daniel Gutierrez - ©Copyright 2024 </h4>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel({
+            interval: false
+            });
+        });
+    </script>
 </body>
 </html>

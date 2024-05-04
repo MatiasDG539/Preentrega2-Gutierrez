@@ -19,6 +19,9 @@ body{
     align-items: center;
 }
 
+header #btn-menu, header label{
+    display: none;
+}
 
 .logo-container {
     margin-left: 400px;
@@ -139,39 +142,35 @@ body{
     padding: 8px;
     color: #1b110f;
     text-align: justify;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .img-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 60vh;
-    overflow: hidden;
-    margin-top: 30px;
-  }
-  
-  .img-container img {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .img-caption {
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 31.75%);
-    width: 63.5%;
-    background-color: rgba(7, 7, 7, 0.7);
-    font-family: "Quicksand", sans-serif;
-    font-size: 17px;
-    color: white;
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
-  }
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  overflow: hidden;
+  margin: 30px auto;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(7, 7, 7, 0.7);
+  font-family: "Quicksand", sans-serif;
+  font-size: 17px;
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
 
 /* Main about */
 
@@ -197,7 +196,7 @@ body{
     right: 30%;
 }
 
-.banner {
+.about-banner {
     position: relative;
     background-image: url('./../assets/img/about-banner.jpg');
     background-size: cover;
@@ -207,14 +206,14 @@ body{
     font-weight: 600;
     padding: 200px 0;
     text-align: center;
-    max-width: 1200px;
+    width: 1200px;
     height: 250px;
     margin: 0 auto;
     margin-top: 20px;
     z-index: 1;
 }
 
-.banner::before {
+.about-banner::before {
     content: '';
     position: absolute;
     top: 0;
@@ -225,16 +224,16 @@ body{
     z-index: 0;
 }
 
-.banner .container {
+.about-banner .container {
     position: relative;
     z-index: 1;
 }
 
-.banner h1 {
+.about-banner h1 {
     font-size: 50px;
 }
 
-.banner p {
+.about-banner p {
     font-size: 30px;
 }
 
@@ -273,19 +272,122 @@ body{
 
 /* Main history */
 
+.banner-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.dash {
+    position: absolute;
+    top: 60%;
+    width: 100px;
+    height: 3px;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.left {
+    left: 30%;
+}
+
+.right {
+    right: 30%;
+}
+
+.histo-banner {
+    position: relative;
+    background-image: url('./../assets/img/histo-banner.webp');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    padding: 200px 0;
+    text-align: center;
+    max-width: 1200px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.histo-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.histo-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.histo-banner h1 {
+    font-size: 50px;
+}
+
+.histo-banner p {
+    font-size: 30px;
+}
+
+.content h2 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    padding: 8px;
+    color: #1b110f;
+    text-align: justify;
+    margin-top: 30px;
+    text-decoration:underline;
+}
+
 /* Main art */
 
-.gallery-container{
-    display: flex;
+.art-banner {
+    position: relative;
+    background-image: url('./../assets/img/art-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    padding: 200px 0;
+    text-align: center;
+    max-width: 1200px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    z-index: 1;
 }
 
-.gallery-cards{
-    width: 300px;
-    height: 400px;
-    margin: 20px;
-    background-color: rgb(245, 215, 176);
+.art-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
 }
 
+.art-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.art-banner h1 {
+    font-size: 50px;
+}
+
+.art-banner p {
+    font-size: 30px;
+}
+  
 /* Main contact */
 
 /* Footer */
@@ -293,7 +395,7 @@ body{
 .footer{
     background-color: #dcc4c0;
     padding: 70px 0;
-    margin-top: auto;
+    margin-top: 40px;
     position: relative;
 }
 
@@ -401,3 +503,21 @@ body{
 
 /* Responsive */
 
+/* tablets */
+@media (max-width: 1024px){
+    
+}
+
+
+/* mobile */
+@media (max-width: 768px){
+
+    /* Header */
+
+    
+
+    .left-img,
+    .right-img {
+        display: none;
+    }
+}
