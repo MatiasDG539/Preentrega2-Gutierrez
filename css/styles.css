@@ -54,6 +54,7 @@ header #btn-menu, header label{
 
 .header nav{
     margin-right: 400px;
+    z-index: 1000;
 }
 
 .header nav ul {
@@ -347,14 +348,34 @@ header #btn-menu, header label{
 
 /* Main art */
 
+.banner-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.dash {
+    position: absolute;
+    top: 60%;
+    width: 100px;
+    height: 3px;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.left {
+    left: 30%;
+}
+
+.right {
+    right: 30%;
+}
+
 .art-banner {
     position: relative;
     background-image: url('./../assets/img/art-banner.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
     padding: 200px 0;
     text-align: center;
     max-width: 1200px;
@@ -381,13 +402,36 @@ header #btn-menu, header label{
 }
 
 .art-banner h1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
     font-size: 50px;
 }
 
 .art-banner p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
     font-size: 30px;
 }
-  
+
+.card {
+    margin-bottom: 80px;
+    max-width: 50vw;
+}
+
+.carousel-inner {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
 /* Main contact */
 
 /* Footer */
@@ -514,10 +558,178 @@ header #btn-menu, header label{
 
     /* Header */
 
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     
+    header label{
+        display: block;
+        position: relative;
+        right: 40px;
+    }
+
+    header label img {
+        width: 50px;
+    }
+
+    .header {
+        padding: 0;
+    }
+
+    .header nav ul li {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+    
+    .logo-container img {
+        width: 150px;
+    }
+
+    .desktop-menu {
+        position: absolute;
+        top: 133.93px;
+        background-color: #dcc4c0;
+        width: 100%;
+        visibility: hidden;
+        transition: visibility 1s, opacity 1s ease;
+        opacity: 0;
+    }
+
+    #btn-menu:checked ~ .desktop-menu {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .desktop-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .left-img,
     .right-img {
-        display: none;
+        position: absolute;
+        top: 28%;
+        transform: translateY(-50%);
+    }
+    
+    .left-img img,
+    .right-img img {
+        height: 150px;
+        width: 100%;
+    }
+
+    .left-img {
+        max-width: 35vw;
+        visibility: hidden;
+        transition: visibility 1s, opacity 1s ease;
+        opacity: 0;
+        z-index: 1100;
+    }
+
+    .right-img {
+        max-width: 35vw;
+        visibility: hidden;
+        transition: visibility 1s, opacity 1s ease;
+        opacity: 0;
+        z-index: 1100;
+    }
+
+    #btn-menu:checked ~ .left-img{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #btn-menu:checked ~ .right-img{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* main */
+
+    .carousel-container {
+        max-width: 90vw;
+    }
+
+    #carouselExampleIndicators {
+        width: 100%;
+    }
+
+    .c-item {
+        height: auto;
+    }
+
+    .c-img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .img-container {
+        position: relative;
+        width: 80vw;
+        height: 400px;
+        overflow: hidden;
+        margin: auto;
+      }
+      
+      .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+    
+    /* about */
+
+    .banner-container {
+        max-width: 95vw;
+        margin: auto;
+    }
+
+    .about-banner {
+        width: 100%;
+    }
+
+    .dash {
+        position: absolute;
+        top: 60%;
+        width: 50px;
+        height: 3px;
+        background-color: #fff;
+        z-index: 2;
+    }
+    
+    .left {
+        left: 10%;
+    }
+    
+    .right {
+        right: 10%;
+    }
+
+    /* history */
+
+    .histo-banner {
+        width: 100%;
+    }
+
+    /* art */
+
+    .art-banner {
+        width: 100%;
+    }
+
+    /* footer */
+
+    .row {
+        margin-right: 80px;
+    }
+
+    .footer-info{
+        padding: 0;
     }
 }
