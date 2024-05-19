@@ -1,0 +1,150 @@
+//Footer
+
+// Variables
+$background-color-footer: #dcc4c0;
+$color-text: #644746;
+$font-family: "Raleway", sans-serif;
+$font-weight: 600;
+$font-size-heading: 18px;
+$font-size-text: 16px;
+$padding-top-footer: 70px;
+$padding-top-heading: 15px;
+$padding-top-copy: 10px;
+$padding-right-logo: 70px;
+$margin-top-footer: 40px;
+$margin-bottom-logo: 20px;
+$margin-bottom-info: 50px;
+$margin-bottom-list-item: 10px;
+$margin-top-copy: 20px;
+$padding-left-hover: 10px;
+$gap-container: 50px;
+$gap-info-wrapper: 100px;
+$max-width-logo: 250px;
+$max-width-info: 300px;
+$border-width-heading: 2px;
+$border-width-copy: 1px;
+$transition-duration: 0.3s;
+$width-full: 100%;
+$box-sizing: border-box;
+$display-block: block;
+$text-align-center: center;
+
+// Estilos del footer
+.footer {
+  background-color: $background-color-footer;
+  padding-top: $padding-top-footer;
+  margin-top: $margin-top-footer;
+  position: relative;
+
+  img {
+    width: $width-full;
+    max-width: $max-width-logo;
+    display: $display-block;
+    margin: 0 auto $margin-bottom-logo;
+    padding-right: $padding-right-logo;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: $width-full;
+    gap: $gap-container;
+  }
+
+  .footer-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: $gap-info-wrapper;
+  }
+
+  .footer-info {
+    flex: 1;
+    max-width: $max-width-info;
+    padding: 0 15px;
+    box-sizing: $box-sizing;
+    margin-bottom: $margin-bottom-info;
+
+    h4 {
+      color: $color-text;
+      font-family: $font-family;
+      font-weight: $font-weight;
+      font-size: $font-size-heading;
+      padding-top: $padding-top-heading;
+      margin-bottom: $margin-bottom-logo;
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        background-color: $color-text;
+        height: $border-width-heading;
+        box-sizing: $box-sizing;
+        width: calc(100% + 10px);
+        transform: translateX(-50%);
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        color: $color-text;
+        font-family: $font-family;
+        font-weight: $font-weight;
+        font-size: $font-size-text;
+        display: $display-block;
+        transition: all $transition-duration ease;
+        margin-bottom: $margin-bottom-list-item;
+
+        &:not(:last-child) {
+          margin-bottom: $margin-bottom-list-item;
+        }
+
+        a {
+          color: $color-text;
+          font-family: $font-family;
+          font-weight: $font-weight;
+          font-size: $font-size-text;
+          text-decoration: none;
+          display: $display-block;
+          transition: all $transition-duration ease;
+
+          &:hover {
+            color: $color-text;
+            padding-left: $padding-left-hover;
+          }
+        }
+
+        &:hover {
+          color: $color-text;
+          padding-left: $padding-left-hover;
+        }
+      }
+    }
+  }
+
+  .copy-info {
+    width: $width-full;
+    text-align: $text-align-center;
+    margin-top: $margin-top-copy;
+    padding-bottom: $margin-bottom-logo;
+    position: relative;
+
+    h4 {
+      color: $color-text;
+      font-family: $font-family;
+      font-weight: $font-weight;
+      font-size: $font-size-text;
+      border-top: $border-width-copy solid $color-text;
+      padding-top: $padding-top-copy;
+    }
+  }
+}

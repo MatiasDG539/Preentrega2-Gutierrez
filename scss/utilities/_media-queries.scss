@@ -1,0 +1,280 @@
+//Media queries
+
+@media (max-width: 768px) {
+
+    // Header
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    label {
+      display: block;
+      position: relative;
+      right: 40px;
+      img {
+        width: 50px;
+      }
+    }
+  }
+  
+  .header {
+    padding: 0;
+  
+    nav ul li {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+  
+    .logo-container {
+      margin-left: 0;
+      img {
+        width: 150px;
+      }
+    }
+  
+    .desktop-menu {
+      position: absolute;
+      top: 133.93px;
+      background-color: #dcc4c0;
+      width: 100%;
+      visibility: hidden;
+      transition: visibility 1s, opacity 1s ease;
+      opacity: 0;
+  
+      ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  
+    #btn-menu:checked ~ .desktop-menu {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    .left-img,
+    .right-img {
+      position: absolute;
+      top: 28%;
+      transform: translateY(-50%);
+      img {
+        height: 150px;
+        width: 100%;
+      }
+    }
+  
+    .left-img,
+    .right-img {
+      max-width: 35vw;
+      visibility: hidden;
+      transition: visibility 1s, opacity 1s ease;
+      opacity: 0;
+      z-index: 1100;
+    }
+  
+    #btn-menu:checked ~ .left-img,
+    #btn-menu:checked ~ .right-img {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  // Main
+  .carousel-container {
+    max-width: 90vw;
+  }
+  
+  #carouselExampleIndicators {
+    width: 100%;
+  }
+  
+  .c-item {
+    height: auto;
+  }
+  
+  .c-img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .img-container {
+    position: relative;
+    width: 80vw;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+  
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+  
+  // About
+  .banner-container {
+    max-width: 95vw;
+    margin: auto;
+  
+    .about-banner,
+    .histo-banner,
+    .art-banner {
+      width: 100%;
+    }
+  
+    .dash {
+      position: absolute;
+      top: 60%;
+      width: 50px;
+      height: 3px;
+      background-color: #fff;
+      z-index: 2;
+  
+      &.left {
+        left: 10%;
+      }
+  
+      &.right {
+        right: 10%;
+      }
+    }
+  }
+  
+  // Art
+  .c-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .card {
+    margin-bottom: 80px;
+    max-width: calc(80% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .carousel-inner-art {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+  .card-body {
+    height: 200px;
+  }
+  
+  // Contact
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(70vh - 60px);
+  }
+  
+  .contact-row {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+  }
+  
+  .contact-info {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    ul li {
+      margin-bottom: 20px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      color: #1b110f;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+  
+      &:last-child {
+        resize: vertical;
+      }
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #36221f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+  
+      &:hover {
+        background-color: #1b110f;
+      }
+    }
+  }
+  
+  // Footer
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  
+    .footer-info-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    .footer-info {
+      max-width: 45%;
+      text-align: center;
+      margin-bottom: 20px;
+      flex: 1 1 45%;
+  
+      img {
+        margin-bottom: 10px;
+        padding-right: 0;
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+}      

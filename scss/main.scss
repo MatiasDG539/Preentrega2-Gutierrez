@@ -1,0 +1,18 @@
+//Globales
+@import "./utilities/globals";
+
+//Header
+@import "./components/header";
+
+//Paginas
+@import "./pages/main-index";
+@import "./pages/about-index";
+@import "./pages/history-index";
+@import "./pages/art-index";
+@import "./pages/contact-index";
+
+//Footer
+@import "./components/footer";
+
+//Media queries
+@import "./utilities/media-queries";
