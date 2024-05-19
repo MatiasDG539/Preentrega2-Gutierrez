@@ -1,5 +1,5 @@
 /* Estilos generales */
-*{
+/*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,11 +7,11 @@
 
 body{
     background-color: #e9ecef;
-}
+} */
 
 /* Header */
 
-.header {
+/* .header {
     background-color: #dcc4c0;
     padding: 15px;
     display: flex;
@@ -86,11 +86,11 @@ header #btn-menu, header label{
 .header nav ul li a:hover{
     color: #644746;
     border-bottom: 2px solid #644746;
-}
+} */
 
 /* Main index */
 
-.title-container {
+/*.title-container {
     width: 40%;
     margin: 0 auto;
     text-align: center;
@@ -171,11 +171,11 @@ header #btn-menu, header label{
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
-}
+} */
 
 /* Main about */
 
-.banner-container {
+/* .banner-container {
     position: relative;
     overflow: hidden;
 }
@@ -269,11 +269,11 @@ header #btn-menu, header label{
     padding: 10px;
     box-sizing: border-box;
     text-align: center;
-}
+} */
 
 /* Main history */
 
-.banner-container {
+/* .banner-container {
     position: relative;
     overflow: hidden;
 }
@@ -344,11 +344,11 @@ header #btn-menu, header label{
     text-align: justify;
     margin-top: 30px;
     text-decoration:underline;
-}
+} */
 
 /* Main art */
 
-.banner-container {
+/* .banner-container {
     position: relative;
     overflow: hidden;
 }
@@ -475,11 +475,11 @@ header #btn-menu, header label{
 .card-body p {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
-}
+} */
 
 /* Main contact */
 
-.con-banner {
+/* .con-banner {
     position: relative;
     background-image: url('./../assets/img/contact-banner.jpg');
     background-size: cover;
@@ -596,11 +596,11 @@ header #btn-menu, header label{
 
 .contact-info button:hover {
     background-color: #1b110f;
-}
+} */
 
 /* Footer */
 
-.footer {
+/* .footer {
     background-color: #dcc4c0;
     padding-top: 70px;
     margin-top: 40px;
@@ -716,22 +716,22 @@ header #btn-menu, header label{
     font-size: 16px;
     border-top: 1px solid #644746;
     padding-top: 10px;
-}
+} */
 
 /* Responsive */
 
 /* tablets */
-@media (max-width: 1024px){
+/* @media (max-width: 1024px){
     
-}
+}*/
 
 
 /* mobile */
-@media (max-width: 768px){
+/* @media (max-width: 768px){
 
     /* Header */
 
-    header {
+    /* header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -821,11 +821,11 @@ header #btn-menu, header label{
     #btn-menu:checked ~ .right-img{
         visibility: visible;
         opacity: 1;
-    }
+    } */
 
     /* main */
 
-    .carousel-container {
+    /* .carousel-container {
         max-width: 90vw;
     }
 
@@ -854,11 +854,11 @@ header #btn-menu, header label{
         width: 100%;
         height: 100%;
         object-fit: fill;
-      }
+      } */
     
     /* about */
 
-    .banner-container {
+    /* .banner-container {
         max-width: 95vw;
         margin: auto;
     }
@@ -882,17 +882,17 @@ header #btn-menu, header label{
     
     .right {
         right: 10%;
-    }
+    } */
 
     /* history */
 
-    .histo-banner {
+    /* .histo-banner {
         width: 100%;
-    }
+    } */
 
     /* art */
 
-    .art-banner {
+    /* .art-banner {
         width: 100%;
     }
 
@@ -929,11 +929,11 @@ header #btn-menu, header label{
     
     .card-body {
         height: 200px;
-    }
+    } */
 
     /* contact */
     
-    .contact-container {
+    /* .contact-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1011,11 +1011,11 @@ header #btn-menu, header label{
     
     .contact-info button:hover {
         background-color: #1b110f;
-    }
+    } */
 
     /* footer */
 
-    .footer-container {
+    /* .footer-container {
         flex-direction: column;
         align-items: center;
     }
@@ -1041,5 +1041,5 @@ header #btn-menu, header label{
         padding-right: 0;
         width: 100%;
         max-width: 200px;
-    }
-}
+    } */
+} */

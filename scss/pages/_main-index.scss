@@ -1,0 +1,124 @@
+//Main-index
+
+// Variables
+$color-title: #644746;
+$color-text: #1b110f;
+$color-caption-bg: rgba(7, 7, 7, 0.7);
+$font-family-title: "Raleway", sans-serif;
+$font-family-content: "Quicksand", sans-serif;
+$font-weight-title: 600;
+$font-weight-content: 500;
+$font-size-title: 50px;
+$font-size-content: 18px;
+$font-size-caption: 17px;
+$padding-title-top: 15px;
+$padding-content: 8px;
+$padding-caption: 10px;
+$margin-bottom-title: 30px;
+$margin-top-content: 20px;
+$margin-container: 0 auto;
+$margin-img-container: 30px auto;
+$height-carousel: 480px;
+$height-img: 100%;
+$width-img: 100%;
+$object-fit-img: cover;
+$max-width-carousel: 60vw;
+$width-content-container: 80%;
+$width-title-container: 40%;
+$width-img-container: 1000px;
+$height-img-container: 700px;
+$height-border-title: 2px;
+$bg-color-border-title: $color-title;
+
+// Mixin para centrar
+@mixin center-align {
+  margin: $margin-container;
+  text-align: center;
+}
+
+// Contenedor del titulo
+.title-container {
+  width: $width-title-container;
+  @include center-align;
+  position: relative;
+
+  h1 {
+    color: $color-title;
+    font-family: $font-family-title;
+    font-weight: $font-weight-title;
+    font-size: $font-size-title;
+    padding-top: $padding-title-top;
+    margin-bottom: $margin-bottom-title;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: $height-border-title;
+    background-color: $bg-color-border-title;
+  }
+}
+
+// Estilos carrusel
+.c-item {
+  height: $height-carousel;
+}
+
+.c-img {
+  height: $height-img;
+  object-fit: $object-fit-img;
+}
+
+.main-carousel-container {
+  max-width: $max-width-carousel;
+  margin: $margin-container;
+}
+
+// Contenido
+.content-container {
+  width: $width-content-container;
+  margin: $margin-container;
+}
+
+.content p {
+  font-family: $font-family-content;
+  font-weight: $font-weight-content;
+  font-size: $font-size-content;
+  padding: $padding-content;
+  color: $color-text;
+  text-align: justify;
+  margin-top: $margin-top-content;
+}
+
+// Imagen
+.img-container {
+  position: relative;
+  width: $width-img-container;
+  height: $height-img-container;
+  overflow: hidden;
+  margin: $margin-img-container;
+
+  img {
+    width: $width-img;
+    height: $height-img;
+    object-fit: $object-fit-img;
+  }
+
+  .img-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $color-caption-bg;
+    font-family: $font-family-content;
+    font-size: $font-size-caption;
+    color: white;
+    padding: $padding-caption;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+}
