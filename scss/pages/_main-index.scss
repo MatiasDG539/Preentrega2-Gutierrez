@@ -1,13 +1,10 @@
 //Main-index
 
 // Variables
-$color-title: #644746;
-$color-text: #1b110f;
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+
 $color-caption-bg: rgba(7, 7, 7, 0.7);
-$font-family-title: "Raleway", sans-serif;
-$font-family-content: "Quicksand", sans-serif;
-$font-weight-title: 600;
-$font-weight-content: 500;
 $font-size-title: 50px;
 $font-size-content: 18px;
 $font-size-caption: 17px;
@@ -25,10 +22,8 @@ $object-fit-img: cover;
 $max-width-carousel: 60vw;
 $width-content-container: 80%;
 $width-title-container: 40%;
-$width-img-container: 1000px;
-$height-img-container: 700px;
 $height-border-title: 2px;
-$bg-color-border-title: $color-title;
+$bg-color-border-title: v.$color-text;
 
 // Mixin para centrar
 @mixin center-align {
@@ -43,9 +38,9 @@ $bg-color-border-title: $color-title;
   position: relative;
 
   h1 {
-    color: $color-title;
-    font-family: $font-family-title;
-    font-weight: $font-weight-title;
+    color: v.$color-text;
+    font-family: v.$font-family-heading;
+    font-weight: v.$font-weight-bold;
     font-size: $font-size-title;
     padding-top: $padding-title-top;
     margin-bottom: $margin-bottom-title;
@@ -66,16 +61,30 @@ $bg-color-border-title: $color-title;
 // Estilos carrusel
 .c-item {
   height: $height-carousel;
+
+  @include m.mobile {
+    height: auto;
+  }
 }
 
 .c-img {
   height: $height-img;
   object-fit: $object-fit-img;
+
+  @include m.mobile {
+    height: 100%;
+    width: 100%;
+  }
+
 }
 
 .main-carousel-container {
   max-width: $max-width-carousel;
   margin: $margin-container;
+
+  @include m.mobile {
+    max-width: 90vw;
+  }
 }
 
 // Contenido
@@ -85,11 +94,11 @@ $bg-color-border-title: $color-title;
 }
 
 .content p {
-  font-family: $font-family-content;
-  font-weight: $font-weight-content;
+  font-family: v.$font-family-text;
+  font-weight: v.$font-weight-mid;
   font-size: $font-size-content;
   padding: $padding-content;
-  color: $color-text;
+  color: v.$font-color-b;
   text-align: justify;
   margin-top: $margin-top-content;
 }
@@ -97,23 +106,38 @@ $bg-color-border-title: $color-title;
 // Imagen
 .img-container {
   position: relative;
-  width: $width-img-container;
-  height: $height-img-container;
+  width: 1000px;
+  height: 700px;
   overflow: hidden;
-  margin: $margin-img-container;
+  margin: 30px auto;
 
   img {
-    width: $width-img;
-    height: $height-img;
-    object-fit: $object-fit-img;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+}
+
+@include m.mobile {
+  .img-container {
+    width: 80vw;
+    height: 400px;
+    margin: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+}
 
   .img-caption {
     position: absolute;
     bottom: 0;
     width: 100%;
     background-color: $color-caption-bg;
-    font-family: $font-family-content;
+    font-family: v.$font-family-text;
     font-size: $font-size-caption;
     color: white;
     padding: $padding-caption;
@@ -121,4 +145,14 @@ $bg-color-border-title: $color-title;
     text-align: center;
   }
 
+@include m.mobile {
+  .carousel-container {
+    max-width: 90vw;
+  }
+}
+
+@include m.mobile {
+  #carouselExampleIndicators {
+    width: 100%;
+  }
 }

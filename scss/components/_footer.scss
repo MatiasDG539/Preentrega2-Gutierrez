@@ -1,12 +1,11 @@
 //Footer
 
 // Variables
-$background-color-footer: #dcc4c0;
-$color-text: #644746;
-$font-family: "Raleway", sans-serif;
-$font-weight: 600;
-$font-size-heading: 18px;
-$font-size-text: 16px;
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+
+$font-size-h: 18px;
+$font-size-t: 16px;
 $padding-top-footer: 70px;
 $padding-top-heading: 15px;
 $padding-top-copy: 10px;
@@ -31,7 +30,7 @@ $text-align-center: center;
 
 // Estilos del footer
 .footer {
-  background-color: $background-color-footer;
+  background-color: v.$background-color;
   padding-top: $padding-top-footer;
   margin-top: $margin-top-footer;
   position: relative;
@@ -68,10 +67,10 @@ $text-align-center: center;
     margin-bottom: $margin-bottom-info;
 
     h4 {
-      color: $color-text;
-      font-family: $font-family;
-      font-weight: $font-weight;
-      font-size: $font-size-heading;
+      color: v.$color-text;
+      font-family: v.$font-family;
+      font-weight: v.$font-weight-bold;
+      font-size: $font-size-h;
       padding-top: $padding-top-heading;
       margin-bottom: $margin-bottom-logo;
       position: relative;
@@ -82,7 +81,7 @@ $text-align-center: center;
         position: absolute;
         left: 50%;
         bottom: -10px;
-        background-color: $color-text;
+        background-color: v.$color-text;
         height: $border-width-heading;
         box-sizing: $box-sizing;
         width: calc(100% + 10px);
@@ -96,10 +95,10 @@ $text-align-center: center;
       margin: 0;
 
       li {
-        color: $color-text;
-        font-family: $font-family;
-        font-weight: $font-weight;
-        font-size: $font-size-text;
+        color: v.$color-text;
+        font-family: v.$font-family;
+        font-weight: v.$font-weight-bold;
+        font-size: $font-size-t;
         display: $display-block;
         transition: all $transition-duration ease;
         margin-bottom: $margin-bottom-list-item;
@@ -109,22 +108,22 @@ $text-align-center: center;
         }
 
         a {
-          color: $color-text;
-          font-family: $font-family;
-          font-weight: $font-weight;
-          font-size: $font-size-text;
+          color: v.$color-text;
+          font-family: v.$font-family;
+          font-weight: v.$font-weight-bold;
+          font-size: $font-size-t;
           text-decoration: none;
           display: $display-block;
           transition: all $transition-duration ease;
 
           &:hover {
-            color: $color-text;
+            color: v.$color-text;
             padding-left: $padding-left-hover;
           }
         }
 
         &:hover {
-          color: $color-text;
+          color: v.$color-text;
           padding-left: $padding-left-hover;
         }
       }
@@ -139,12 +138,40 @@ $text-align-center: center;
     position: relative;
 
     h4 {
-      color: $color-text;
-      font-family: $font-family;
-      font-weight: $font-weight;
-      font-size: $font-size-text;
-      border-top: $border-width-copy solid $color-text;
+      color: v.$color-text;
+      font-family: v.$font-family;
+      font-weight: v.$font-weight-bold;
+      font-size: $font-size-t;
+      border-top: $border-width-copy solid v.$color-text;
       padding-top: $padding-top-copy;
+    }
+  }
+}
+
+@include m.mobile {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+
+    .footer-info-wrapper {
+      justify-content: center;
+      width: 100%;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-info {
+      max-width: 45%;
+      text-align: center;
+      margin-bottom: 20px;
+      flex: 1 1 45%;
+
+      img {
+        margin-bottom: 10px;
+        padding-right: 0;
+        width: 100%;
+        max-width: 200px;
+      }
     }
   }
 }

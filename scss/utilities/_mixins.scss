@@ -1,0 +1,19 @@
+@use 'variables' as map;
+
+@mixin mobile {
+    @media screen and (max-width: map-get($map: map.$screen-size, $key: mobile)) {
+        @content;
+    }
+}
+
+// @mixin tablet {
+//     @media screen and (min-width: map-get($map: map.$screen-size, $key: tablet)) and (max-width: map-get($map: map.$screen-size, $key: desktop)){
+//         @content;
+//     }
+// }
+
+// @mixin largeDesktop {
+//     @media screen and (min-width: map-get($map: map.$screen-size, $key: desktop-large)) {
+//         @content;
+//     }
+// }

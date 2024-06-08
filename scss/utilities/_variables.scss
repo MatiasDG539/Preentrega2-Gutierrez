@@ -1,0 +1,44 @@
+//Globales
+$background-color-all:#fff;
+$font-family-heading: "Raleway", sans-serif;
+$font-family-text: "Quicksand", sans-serif;
+$font-family: "Raleway", sans-serif;
+$font-size-heading: 50px;
+$font-size-subheading: 30px;
+$font-size-text: 17px;
+$font-weight-bold: 600;
+$font-weight-mid: 500;
+$font-weight-normal: 400;
+$font-weight-text: 500;
+$z-index-content: 1;
+$z-index-overlay: 0;
+$font-color-b: #1b110f;
+$font-color-w: white;
+$position-abs: absolute;
+
+//Header photos
+$background-overlay: rgba(0, 0, 0, 0.6);
+$banner-padding: 200px 0;
+$banner-max-width: 1200px;
+$banner-height: 250px;
+$banner-margin-top: 20px;
+
+//Card
+$card-width: 48%;
+$card-height: 400px;
+$card-margin-top: 30px;
+$card-margin-bottom: 20px;
+$caption-padding: 10px;
+$caption-background: rgba(0, 0, 0, 0.7);
+
+
+$background-color: #dcc4c0;
+$color-text: #644746;
+$transition-duration: 0.3s;
+
+$screen-size: (
+    'mobile'  : 768px, 
+    'tablet'  : 1024px, 
+    // 'desktop' : 0px, 
+    // 'desktop-large'  : 0px,
+);

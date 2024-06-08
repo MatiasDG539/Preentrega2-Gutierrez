@@ -1,40 +1,30 @@
 //About-index
 
 // Variables
-$background-color: #fff;
-$font-color: #644746;
-$font-family-heading: "Raleway", sans-serif;
-$font-family-text: "Quicksand", sans-serif;
+
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+
 $font-weight: 600;
-$font-size-heading: 50px;
-$font-size-subheading: 30px;
-$font-size-text: 17px;
-$background-overlay: rgba(0, 0, 0, 0.6);
-$banner-padding: 200px 0;
 $banner-width: 1200px;
-$banner-height: 250px;
-$banner-margin-top: 20px;
-$banner-background: url('./../assets/img/about-banner.jpg') no-repeat center center/cover;
-$card-width: 48%;
-$card-height: 400px;
-$card-margin-top: 30px;
-$card-margin-bottom: 20px;
-$caption-background: rgba(0, 0, 0, 0.7);
-$caption-padding: 10px;
-$z-index-content: 1;
-$z-index-overlay: 0;
+$banner-background-about: url('./../assets/img/about-banner.jpg') no-repeat center center/cover;
 
 // Banner
 .banner-container {
   position: relative;
   overflow: hidden;
 
+  @include m.mobile {
+    max-width: 95vw;
+    margin: auto;
+  }
+
   .dash {
     position: absolute;
     top: 60%;
     width: 100px;
     height: 3px;
-    background-color: $background-color;
+    background-color: v.$background-color-all;
     z-index: 2;
 
     &.left {
@@ -48,17 +38,17 @@ $z-index-overlay: 0;
 
   .about-banner {
     position: relative;
-    background: $banner-background;
-    color: $background-color;
-    font-family: $font-family-heading;
+    background: $banner-background-about;
+    color: v.$background-color-all;
+    font-family: v.$font-family-heading;
     font-weight: $font-weight;
-    padding: $banner-padding;
+    padding: v.$banner-padding;
     text-align: center;
     width: $banner-width;
-    height: $banner-height;
+    height: v.$banner-height;
     margin: 0 auto;
-    margin-top: $banner-margin-top;
-    z-index: $z-index-content;
+    margin-top: v.$banner-margin-top;
+    z-index: v.$z-index-content;
 
     &::before {
       content: '';
@@ -67,32 +57,53 @@ $z-index-overlay: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: $background-overlay;
-      z-index: $z-index-overlay;
+      background-color: v.$background-overlay;
+      z-index: v.$z-index-overlay;
     }
 
     .container {
       position: relative;
-      z-index: $z-index-content;
+      z-index: v.$z-index-content;
 
       h1 {
-        font-size: $font-size-heading;
+        font-size: v.$font-size-heading;
       }
 
       p {
-        font-size: $font-size-subheading;
+        font-size: v.$font-size-subheading;
       }
     }
   }
+
+  @include m.mobile {
+    .about-banner {
+      width: 100%;
+    }
+  }
+
+  @include m.mobile {
+    .dash {
+      width: 50px;
+
+      &.left {
+        left: 10%;
+      }
+
+      &.right {
+        right: 10%;
+      }
+    }
+  }
+
 }
 
 // Contenido
 .content-container {
   .content {
     p {
-      font-family: $font-family-text;
-      font-size: $font-size-text;
-      color: $font-color;
+      font-family: v.$font-family-text;
+      font-size: v.$font-size-text;
+      color: v.$color-text;
       text-align: justify;
       margin-top: 20px;
       padding: 8px;
@@ -116,11 +127,11 @@ $z-index-overlay: 0;
       position: absolute;
       bottom: 0;
       width: 100%;
-      background-color: $caption-background;
-      font-family: $font-family-text;
-      font-size: $font-size-text;
-      color: $background-color;
-      padding: $caption-padding;
+      background-color: v.$caption-background;
+      font-family: v.$font-family-text;
+      font-size: v.$font-size-text;
+      color: v.$background-color-all;
+      padding: v.$caption-padding;
       box-sizing: border-box;
       text-align: center;
     }
@@ -132,14 +143,14 @@ $z-index-overlay: 0;
     align-items: flex-start;
 
     .img-card {
-      width: $card-width;
+      width: v.$card-width;
       position: relative;
-      margin-top: $card-margin-top;
-      margin-bottom: $card-margin-bottom;
+      margin-top: v.$card-margin-top;
+      margin-bottom: v.$card-margin-bottom;
 
       img {
         width: 100%;
-        height: $card-height;
+        height: v.$card-height;
         object-fit: cover;
       }
 
@@ -148,11 +159,11 @@ $z-index-overlay: 0;
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: $caption-background;
-        font-family: $font-family-text;
-        font-size: $font-size-text;
-        color: $background-color;
-        padding: $caption-padding;
+        background-color: v.$caption-background;
+        font-family: v.$font-family-text;
+        font-size: v.$font-size-text;
+        color: v.$background-color-all;
+        padding: v.$caption-padding;
         box-sizing: border-box;
         text-align: center;
       }
