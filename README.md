@@ -8,4 +8,3 @@ Durante el desarrollo de este proyecto y en el transcurso del curso aprendi de m
  - HTML.
  - CSS.
  - SASS.
- - NODE.JS
