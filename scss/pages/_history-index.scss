@@ -1,29 +1,10 @@
 //History-index
 
 // Variables
-$background-color: #fff;
-$font-color: #1b110f;
-$font-family-heading: "Raleway", sans-serif;
-$font-family-text: "Quicksand", sans-serif;
-$font-weight-heading: 600;
-$font-weight-text: 500;
-$font-size-heading: 50px;
-$font-size-subheading: 30px;
-$font-size-text: 17px;
-$background-overlay: rgba(0, 0, 0, 0.6);
-$banner-padding: 200px 0;
-$banner-max-width: 1200px;
-$banner-height: 250px;
-$banner-margin-top: 20px;
-$banner-background: url('./../assets/img/histo-banner.webp') no-repeat center center/cover;
-$card-width: 48%;
-$card-height: 400px;
-$card-margin-top: 30px;
-$card-margin-bottom: 20px;
-$caption-background: rgba(0, 0, 0, 0.7);
-$caption-padding: 10px;
-$z-index-content: 1;
-$z-index-overlay: 0;
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+
+$banner-background-history: url('./../assets/img/histo-banner.webp') no-repeat center center/cover;
 
 // Banner
 .banner-container {
@@ -35,31 +16,45 @@ $z-index-overlay: 0;
     top: 60%;
     width: 100px;
     height: 3px;
-    background-color: $background-color;
+    background-color: v.$background-color-all;
     z-index: 2;
-
+  
     &.left {
       left: 30%;
     }
-
+  
     &.right {
       right: 30%;
+    }
+  }
+  
+  @include m.mobile {
+    .dash {
+      width: 50px;
+  
+      &.left {
+        left: 10%;
+      }
+  
+      &.right {
+        right: 10%;
+      }
     }
   }
 
   .histo-banner {
     position: relative;
-    background: $banner-background;
-    color: $background-color;
-    font-family: $font-family-heading;
-    font-weight: $font-weight-heading;
-    padding: $banner-padding;
+    background: $banner-background-history;
+    color: v.$background-color-all;
+    font-family: v.$font-family-heading;
+    font-weight: v.$font-weight-bold;
+    padding: v.$banner-padding;
     text-align: center;
-    max-width: $banner-max-width;
-    height: $banner-height;
+    max-width: v.$banner-max-width;
+    height: v.$banner-height;
     margin: 0 auto;
-    margin-top: $banner-margin-top;
-    z-index: $z-index-content;
+    margin-top: v.$banner-margin-top;
+    z-index: v.$z-index-content;
 
     &::before {
       content: '';
@@ -68,22 +63,28 @@ $z-index-overlay: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: $background-overlay;
-      z-index: $z-index-overlay;
+      background-color: v.$background-overlay;
+      z-index: v.$z-index-overlay;
     }
 
     .container {
       position: relative;
-      z-index: $z-index-content;
+      z-index: v.$z-index-content;
 
       h1 {
-        font-size: $font-size-heading;
+        font-size: v.$font-size-heading;
       }
 
       p {
-        font-size: $font-size-subheading;
+        font-size: v.$font-size-subheading;
       }
     }
+  }
+}
+
+@include m.mobile {
+  .histo-banner {
+    width: 100%;
   }
 }
 
@@ -91,19 +92,19 @@ $z-index-overlay: 0;
 .content-container {
   .content {
     h2 {
-      font-family: $font-family-text;
-      font-weight: $font-weight-text;
+      font-family: v.$font-family-text;
+      font-weight: v.$font-weight-text;
       padding: 8px;
-      color: $font-color;
+      color: v.$font-color-b;
       text-align: justify;
       margin-top: 30px;
       text-decoration: underline;
     }
 
     p {
-      font-family: $font-family-text;
-      font-size: $font-size-text;
-      color: $font-color;
+      font-family: v.$font-family-text;
+      font-size: v.$font-size-text;
+      color: v.$font-color-b;
       text-align: justify;
       margin-top: 20px;
       padding: 8px;
@@ -116,22 +117,37 @@ $z-index-overlay: 0;
     height: 700px;
     overflow: hidden;
     margin: 30px auto;
-
+  
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+  }
+  
+  @include m.mobile {
+    .img-container {
+      width: 80vw;
+      height: 400px;
+      margin: auto;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+    }
+  }
 
     .img-caption {
       position: absolute;
       bottom: 0;
       width: 100%;
-      background-color: $caption-background;
-      font-family: $font-family-text;
-      font-size: $font-size-text;
-      color: $background-color;
-      padding: $caption-padding;
+      background-color: v.$caption-background;
+      font-family: v.$font-family-text;
+      font-size: v.$font-size-text;
+      color: v.$background-color-all;
+      padding: v.$caption-padding;
       box-sizing: border-box;
       text-align: center;
     }
@@ -143,14 +159,14 @@ $z-index-overlay: 0;
     align-items: flex-start;
 
     .img-card {
-      width: $card-width;
+      width: v.$card-width;
       position: relative;
-      margin-top: $card-margin-top;
-      margin-bottom: $card-margin-bottom;
+      margin-top: v.$card-margin-top;
+      margin-bottom: v.$card-margin-bottom;
 
       img {
         width: 100%;
-        height: $card-height;
+        height: v.$card-height;
         object-fit: cover;
       }
 
@@ -159,14 +175,13 @@ $z-index-overlay: 0;
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: $caption-background;
-        font-family: $font-family-text;
-        font-size: $font-size-text;
-        color: $background-color;
-        padding: $caption-padding;
+        background-color: v.$caption-background;
+        font-family: v.$font-family-text;
+        font-size: v.$font-size-text;
+        color: v.$background-color-all;
+        padding: v.$caption-padding;
         box-sizing: border-box;
         text-align: center;
       }
     }
   }
-}

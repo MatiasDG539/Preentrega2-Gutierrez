@@ -1,40 +1,33 @@
 //Art-index
 
 // Variables
-$background-color: #fff;
-$font-color: white;
-$font-family: "Raleway", sans-serif;
-$font-weight-bold: 600;
-$font-weight-normal: 400;
-$banner-padding: 200px 0;
-$banner-max-width: 1200px;
-$banner-height: 250px;
-$banner-margin-top: 20px;
-$background-overlay: rgba(0, 0, 0, 0.6);
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+
 $carousel-item-height: 250px;
 $carousel-item-transition-duration: 0.3s;
 $carousel-item-hover-scale: 1.2;
-$card-margin-bottom: 80px;
-$card-margin-left: 50px;
-$card-max-width: 50vw;
-$card-body-height: 180px;
+$card-margin-b: 80px;
+$card-margin-l: 50px;
+$card-max-w: 50vw;
+$card-body-h: 180px;
 $category-border-color: black;
 $category-border-width: 1px;
 $category-border-style: solid;
 $category-width: 35px;
 
 // Mixins
-@mixin banner-styles {
+@mixin art-banner-styles {
   position: relative;
   background-size: cover;
   background-position: center;
-  color: $font-color;
-  padding: $banner-padding;
+  color: v.$font-color-w;
+  padding: v.$banner-padding;
   text-align: center;
-  max-width: $banner-max-width;
-  height: $banner-height;
+  max-width: v.$banner-max-width;
+  height: v.$banner-height;
   margin: 0 auto;
-  margin-top: $banner-margin-top;
+  margin-top: v.$banner-margin-top;
   z-index: 1;
 
   &::before {
@@ -44,7 +37,7 @@ $category-width: 35px;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $background-overlay;
+    background-color: v.$background-overlay;
     z-index: 0;
   }
 
@@ -53,8 +46,13 @@ $category-width: 35px;
     z-index: 1;
 
     h1, p {
-      font-family: $font-family;
-      font-weight: $font-weight-bold;
+      font-family: v.$font-family;
+      font-weight: v.$font-weight-bold;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: 700;
     }
 
     p {
@@ -73,7 +71,7 @@ $category-width: 35px;
     top: 60%;
     width: 100px;
     height: 3px;
-    background-color: $font-color;
+    background-color: v.$font-color-w;
     z-index: 2;
 
     &.left {
@@ -86,9 +84,16 @@ $category-width: 35px;
   }
 
   .art-banner {
-    @include banner-styles;
+    @include art-banner-styles;
     background-image: url('./../assets/img/art-banner.jpg');
   }
+
+  @include m.mobile {
+    .art-banner {
+      width: 100%;
+    }
+  }
+
 }
 
 .custom-container {
@@ -107,12 +112,25 @@ $category-width: 35px;
 .c-col {
   flex: 0 0 50%;
   max-width: 50%;
+
+  @include m.mobile {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 .card {
-  margin-bottom: $card-margin-bottom;
-  margin-left: $card-margin-left;
-  max-width: $card-max-width;
+  margin-bottom: $card-margin-b;
+  margin-left: $card-margin-l;
+  max-width: $card-max-w;
+
+  @include m.mobile {
+    margin-bottom: 80px;
+    max-width: calc(80% - 30px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 .carousel-inner-art {
@@ -134,23 +152,44 @@ $category-width: 35px;
   }
 }
 
+@include m.mobile {
+  .carousel-inner-art {
+    height: 250px;
+  }
+}
+
+@include m.mobile {
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3 ease;
+  }
+}
+
 .card-body {
-  height: $card-body-height;
+  height: $card-body-h;
 
   h6 {
-    font-family: $font-family;
-    font-weight: $font-weight-bold;
+    font-family: v.$font-family;
+    font-weight: v.$font-weight-bold;
     border-bottom: $category-border-width $category-border-style $category-border-color;
     width: $category-width;
   }
 
   h3 {
-    font-family: $font-family;
-    font-weight: $font-weight-normal;
+    font-family: v.$font-family;
+    font-weight: v.$font-weight-normal;
   }
 
   p {
-    font-family: $font-family;
-    font-weight: $font-weight-bold;
+    font-family: v.$font-family;
+    font-weight: v.$font-weight-bold;
+  }
+}
+
+@include m.mobile {
+  .card-body {
+    height: 200px;
   }
 }

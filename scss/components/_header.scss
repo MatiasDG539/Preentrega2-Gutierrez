@@ -1,17 +1,16 @@
 //Header
 
 // Variables
-$background-color-header: #dcc4c0;
-$color-text: #644746;
-$font-family: "Raleway", sans-serif;
+
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+
 $font-size: 26px;
-$font-weight: 600;
 $border-bottom-width: 2px;
 $padding-header: 15px;
 $padding-link: 10px;
 $margin-left-logo: 22%;
 $margin-right-nav: 400px;
-$transition-duration: 0.3s;
 $img-height: 200px;
 $img-width: 350px;
 
@@ -21,79 +20,182 @@ $img-width: 350px;
 }
 
 .header {
-  background-color: $background-color-header;
+  background-color: v.$background-color;
   padding: $padding-header;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  #btn-menu,
-  label {
+  #btn-menu {
     display: none;
   }
 
-  .logo-container {
-    margin-left: $margin-left-logo;
+  label {
+    display: none;
 
-    img {
-      width: 180px;
+    @include m.mobile {
+      display: block;
+      position: relative;
+      right: 40px;
+
+      img {
+        width: 50px;
+      }
     }
   }
 
-  .left-img,
+}
+
+@include m.mobile {
+  .header {
+    padding: 0;
+    nav ul li {
+      margin: 0;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.logo-container {
+  margin-left: $margin-left-logo;
+  img {
+    width: 180px;
+    @include m.mobile {
+      width: 160px;
+    }
+  }
+}
+
+@include m.mobile {
+  .logo-container {
+    margin-left: 0;
+  }
+}
+
+.left-img {
+  position: absolute;
+  top: 11%;
+  transform: translateY(-50%);
+  left: 0;
+  img {
+    height: $img-height;
+    width: $img-width;
+  }
+}
+
+@include m.mobile {
+  .left-img {
+    position: absolute;
+    top: 28%;
+    transform: translateY(-50%);
+    max-width: 35vw;
+    visibility: hidden;
+    transition: visibility 1s, opacity 1s ease;
+    opacity: 0;
+    z-index: 1100;
+
+  img {
+    height: 150px;
+    width: 100%;
+  }
+  }
+}
+
+.right-img {
+  position: absolute;
+  top: 11%;
+  transform: translateY(-50%);
+  right: 0;
+  img {
+    height: $img-height;
+    width: $img-width;
+  }
+}
+
+@include m.mobile {
   .right-img {
     position: absolute;
-    top: 11%;
+    top: 28%;
     transform: translateY(-50%);
+    max-width: 35vw;
+    visibility: hidden;
+    transition: visibility 1s, opacity 1s ease;
+    opacity: 0;
+    z-index: 1100;
 
-    img {
-      height: $img-height;
-      width: $img-width;
-    }
+  img {
+    height: 150px;
+    width: 100%;
   }
-
-  .left-img {
-    left: 0;
   }
+}
 
-  .right-img {
-    right: 0;
+@include m.mobile {
+  #btn-menu:checked ~ .left-img {
+    visibility: visible;
+    opacity: 1;
   }
+}
 
-  nav {
-    margin-right: $margin-right-nav;
-    z-index: 1000;
+@include m.mobile {
+  #btn-menu:checked ~ .right-img {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-
-      li {
-        margin-right: 15px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        a {
-          color: $color-text;
-          text-decoration: none;
-          font-family: $font-family;
-          font-weight: $font-weight;
-          font-size: $font-size;
-          padding: $padding-link;
-          border-bottom: $border-bottom-width solid transparent;
-          @include transition(color, $transition-duration);
-          @include transition(border-bottom, $transition-duration);
-
-          &:hover {
-            color: $color-text;
-            border-bottom: $border-bottom-width solid $color-text;
-          }
+nav {
+  margin-right: $margin-right-nav;
+  z-index: 1000;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        color: v.$color-text;
+        text-decoration: none;
+        font-family: v.$font-family;
+        font-weight: v.$font-weight-bold;
+        font-size: $font-size;
+        padding: $padding-link;
+        border-bottom: $border-bottom-width solid transparent;
+        @include transition(color, v.$transition-duration);
+        @include transition(border-bottom, v.$transition-duration);
+        &:hover {
+          color: v.$color-text;
+          border-bottom: $border-bottom-width solid v.$color-text;
         }
       }
     }
+  }
+}
+
+@include m.mobile {
+  .desktop-menu {
+    position: absolute;
+    top: 133.93px;
+    background-color: v.$background-color;
+    width: 100%;
+    visibility: hidden;
+    transition: visibility 1s, opacity 1s ease;
+    opacity: 0;
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@include m.mobile {
+  #btn-menu:checked ~ .desktop-menu {
+    visibility: visible;
+    opacity: 1;
   }
 }
